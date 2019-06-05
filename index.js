@@ -13,9 +13,14 @@ const list = function(req, res) {
       res.send(`${body.error.code}: ${body.error.message}`)
       return;
     }
-    const list = body.data.map(l => l.title);
+    const list = body.data.map(pList => {
+      return {
+        title: pList.title,
+        link: pList.link
+      }
+    });
     console.log(`${JSON.stringify(list)}`);
-    res.send(`Recommended tracks: ${JSON.stringify(list, null, 1)}`);
+    res.send(`Recommended playlists: ${JSON.stringify(list, null, 1)}`);
   });
 }
 
