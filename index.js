@@ -8,14 +8,14 @@ const uid = process.env.DUID;
 const token = process.env.TOK;
 
 const list = function(req, res) {
-  client.get(`${url}/user/${uid}/playlists?access_token=${token}`, body => {
+  client.get(`${url}/user/${uid}/recommendations/playlists?access_token=${token}`, body => {
     if (body && body.error && body.error.code) {
       res.send(`${body.error.code}: ${body.error.message}`)
       return;
     }
-    const playlists = body.data.map(l => l.title);
-    console.log(`${JSON.stringify(playlists)}`);
-    res.send(`Playlists: ${JSON.stringify(playlists, null, 1)}`);
+    const list = body.data.map(l => l.title);
+    console.log(`${JSON.stringify(list)}`);
+    res.send(`Recommended tracks: ${JSON.stringify(list, null, 1)}`);
   });
 }
 
