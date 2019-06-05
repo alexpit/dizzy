@@ -1,2 +1,2 @@
 # dizzy
-a Deezer client sandbox
+a Deezer client
