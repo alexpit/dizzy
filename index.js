@@ -8,15 +8,16 @@ const uid = process.env.DUID;
 const token = process.env.TOK;
 
 const list = function(req, res) {
-  client.get(`${url}/user/${uid}/recommendations/playlists?access_token=${token}`, body => {
+  client.get(`${url}/user/${uid}/recommendations/albums?access_token=${token}`, body => {
     if (body && body.error && body.error.code) {
       res.send(`${body.error.code}: ${body.error.message}`)
       return;
     }
-    const list = body.data.map(pList => {
+    const list = body.data.map(res => {
       return {
-        title: pList.title,
-        link: pList.link
+        title: res.title,
+        link: res.link,
+        cover: res.cover
       }
     });
     console.log(`${JSON.stringify(list)}`);
