@@ -11,7 +11,7 @@ This sandbox project is attempting to experiment and resurface some of those use
 
 **Development environment**
 
-As a result of Deezer [implementation of the OAuth](https://developers.deezer.com/api/oauth) authorization, in this initial stage, the project development environment setup is quite auckward, trying to enable authorization based on 4 subscriber specific and confidential fields (listed below), in order to obtain the `access_token` manually, before the application is deployed at the expected `<your-app-URL>`:
+As a result of Deezer [implementation of the OAuth](https://developers.deezer.com/api/oauth) authorization, in this initial stage, the project development environment setup is quite awkward, trying to enable authorization based on 4 subscriber specific and confidential fields (listed below), in order to obtain the `access_token` manually, before the application is deployed at the expected `<your-app-URL>`:
  1. `<your-app-id>`
  2. `<your-app-URL>`
  3. `<your-APP-secret>`
