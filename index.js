@@ -23,7 +23,11 @@ const smtpSrv = mailer.createTransport({
 
 const formatMsg = function(list) {
   const htmlList = list.map(item => {
-    return `<li><a href="${item.link}"><img src="${item.cover}" alt="${item.title}"></a></li>`;
+    const lnk = item.link;
+    const img = item.cover;
+    const titl = item.title;
+    const name = item.artist;
+    return `<li><a href="${lnk}"><img src="${img}" alt="${titl} - ${name}"></a></li>`;
   });
 
   return {
@@ -42,11 +46,12 @@ const notify = function(req, res) {
       return;
     }
 
-    const playlist = body.data.map(res => {
+    const playlist = body.data.map(album => {
       return {
-        title: res.title,
-        link: res.link,
-        cover: res.cover
+        title: album.title,
+        link: album.link,
+        cover: album.cover,
+        artist: album.artist.name
       }
     });
 
