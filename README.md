@@ -25,7 +25,7 @@ As a result of Deezer [implementation of the OAuth](https://developers.deezer.co
 ... use <code> below, replacing <CODE>:
 # curl 'https://connect.deezer.com/oauth/access_token.php?output=json&app_id=<your-app-ID>&secret=<your-APP-secret>&code=<CODE>
 ... use <access_token> below, replacing <ACCESS-TOKEN>
-# DUID=<Deezer-user-ID> TOK=<ACCESS-TOKEN> node index.js
+# DUID=<Deezer-user-ID> TOK=<ACCESS-TOKEN> SMTPID=<user-id> SMTPSWD=<secret> SMTPURL=<smtp.domain.com> node index.js
 ... open another terminal and call:
 # curl http://localhost:99/wasup
 ```
