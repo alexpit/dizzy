@@ -27,5 +27,5 @@ As a result of Deezer [implementation of the OAuth](https://developers.deezer.co
 ... use <access_token> below, replacing <ACCESS-TOKEN>
 # DUID=<Deezer-user-ID> TOK=<ACCESS-TOKEN> node index.js
 ... open another terminal and call:
-# curl http://localhost:99/recommend
+# curl http://localhost:99/wasup
 ```
