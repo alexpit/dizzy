@@ -18,14 +18,15 @@ As a result of Deezer [implementation of the OAuth](https://developers.deezer.co
  4. `<Deezer-user-ID>`
 
 ```
-# git clone ...
-# cd dizzy
-# npm install
-# open in browser: https://connect.deezer.com/oauth/auth.php?app_id=<your-app-id>&redirect_uri=<your-app-URL>&perms=basic_access,email
-... use <code> below, replacing <CODE>:
-# curl 'https://connect.deezer.com/oauth/access_token.php?output=json&app_id=<your-app-ID>&secret=<your-APP-secret>&code=<CODE>
-... use <access_token> below, replacing <ACCESS-TOKEN>
-# DUID=<Deezer-user-ID> TOK=<ACCESS-TOKEN> SMTPID=<user-id> SMTPSWD=<secret> SMTPURL=<smtp.domain.com> node index.js
+>> npm install
+>> open in browser: https://connect.deezer.com/oauth/auth.php?app_id=<your-app-id>&redirect_uri=<your-app-URL>&perms=basic_access,email
+
+... use above retrieved <code> as a GET param below, replacing <CODE>:
+>> curl/[wget]  'https://connect.deezer.com/oauth/access_token.php?output=json&app_id=<your-app-ID>&secret=<your-APP-secret>&code=<CODE>
+
+... use above retrieved <access_token> as a GET param below, replacing <ACCESS-TOKEN>, besides the other user specific settings:
+>> DUID=<Deezer-user-ID> TOK=<ACCESS-TOKEN> SMTPID=<user-id> SMTPSWD=<secret> SMTPURL=<smtp.domain.com> node index.js
+
 ... open another terminal and call:
-# curl http://localhost:99/wasup
+>> curl/[wget]  'http://localhost:99/wasup'
 ```
